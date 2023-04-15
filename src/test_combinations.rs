@@ -1,7 +1,5 @@
 fn main()
 {
-	println!("{}", 5*4*3*2*1*6);
-
 	let init_array : std::vec::Vec<&str> = vec!["abandon", "ability", "able", "baby", "bachelor", "bacon", "cabbage", "cabin", "cable", "dad"];//, "damage"];//, "damp"];
 	let ELEMENTS : i64 = init_array.len() as i64;
 
@@ -56,24 +54,24 @@ fn main()
 		length = length + 1;
 	}
 
-//	for printing	
-	let mut counter : usize = 0;
-	let mut row : usize = 0;
+// //	for printing	
+// 	let mut counter : usize = 0;
+// 	let mut row : usize = 0;
 
-	for num in result_vec
-	{
-		if row % ELEMENTS as usize == 0
-		{
-			counter = counter + 1;
-			print!("\n{}: {}", counter, num);
-		}
-		else
-		{
-			print!(" {}", num);
-		}
+// 	for num in result_vec
+// 	{
+// 		if row % ELEMENTS as usize == 0
+// 		{
+// 			counter = counter + 1;
+// 			print!("\n{}: {}", counter, num);
+// 		}
+// 		else
+// 		{
+// 			print!(" {}", num);
+// 		}
 
-		row = row + 1;
-	}
+// 		row = row + 1;
+// 	}
 }
 
 fn mixing(init_array : std::vec::Vec<&str>) -> std::vec::Vec<&str>
@@ -93,7 +91,7 @@ fn mixing(init_array : std::vec::Vec<&str>) -> std::vec::Vec<&str>
 	let mut result_vec : std::vec::Vec<&str> = std::vec::Vec::new();
 	result_vec.extend_from_slice(&init_array);
 
-	while iteration < max_iterations //- 5*(ELEMENTS as i32 - 3)
+	while iteration < max_iterations
 	{
 		if iteration < ELEMENTS as i32
 		{
