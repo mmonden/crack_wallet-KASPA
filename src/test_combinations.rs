@@ -11,6 +11,8 @@ fn main()
 
 	let mut result_vec : std::vec::Vec<&str> = mixing(array_4);
 	let mut final_vec : std::vec::Vec<&str> = std::vec::Vec::new();
+	
+	let last_word : &str = init_array[init_array.len() - 1];
 
 	let mut index : usize = 0;
 	let mut glob_index : usize = 0;
