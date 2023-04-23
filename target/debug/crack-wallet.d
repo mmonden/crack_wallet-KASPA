@@ -1,1 +1,1 @@
-/home/matthiasmonden/projects/rusty-kaspa/crack-wallet/target/debug/crack-wallet: /home/matthiasmonden/projects/rusty-kaspa/crack-wallet/src/main.rs /home/matthiasmonden/projects/rusty-kaspa/crack-wallet/src/word_combinations.rs
+/home/matthiasmonden/projects/rusty-kaspa/crack_wallet-KASPA/target/debug/crack-wallet: /home/matthiasmonden/projects/rusty-kaspa/crack_wallet-KASPA/src/main.rs /home/matthiasmonden/projects/rusty-kaspa/crack_wallet-KASPA/src/word_combinations.rs
