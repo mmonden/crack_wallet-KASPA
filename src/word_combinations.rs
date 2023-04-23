@@ -144,31 +144,50 @@ impl Word
 				{
 					while self.word_count.line[j] < length - 1
 					{
-						for i in 0 .. pivot + 1
+						for i in 0 .. pivot
 						{
 							word_vector.push(words[self.word_count.line[i]].to_string());
 						}
 
-						self.word_count.line[j] += 1;	// Should be checked if okay to do so;
+						//self.incrementLine(j);//self.word_count.line[j] += 1;	// Should be checked if okay to do so;
 
 						if j == 11
-						{	
+						{
+							self.incrementLine(j);
+
 							word_vector.push(words[self.word_count.line[j]].to_string());
 						}
 						else
 						{
-							break;
+							self.incrementLine(j);
 						}
 					}
+
+					//break;
 				}
 
-				break;
+				//break;
 			}
 
 			break;
 		}
 
 		return word_vector;
+	}
+
+	fn incrementLine(&mut self, j : usize)
+	{
+		if j == 11
+		{
+			self.word_count.line[j] += 1;
+		}	
+		else
+		{
+			for place in j .. 11
+			{
+				println!("{}", place);
+			}
+		}
 	}
 
 	fn makeAllCombinations(&mut self, word_vec : std::vec::Vec<String>)
@@ -181,7 +200,7 @@ impl Word
 		let mut vec_array : std::vec::Vec<String> = std::vec::Vec::new();
 
 		vec_array = self.selectWords(max_words);
-		println!("{:?}", self.word_count.line);
+		// println!("{:?}", self.word_count.line);
 
 		return vec_array;//.iter().map(|s| s.to_string()).collect();
 	}

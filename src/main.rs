@@ -16,6 +16,23 @@ fn main()
 	// let words : std::vec::Vec<String> = W.getWords();
 	//println!("{}", words);
 
-	let wordV : std::vec::Vec<String> = W.makeList(12);
-	println!("{:?}", wordV);
+	let result_vec : std::vec::Vec<String> = W.makeList(12);
+
+	let mut counter : usize = 0;
+	let mut row : usize = 0;
+
+	for num in result_vec
+	{
+		if row % 12 as usize == 0
+		{
+			counter = counter + 1;
+			print!("\n{}: {}", counter, num);
+		}
+		else
+		{
+			print!(" {}", num);
+		}
+
+		row = row + 1;
+	}
 }
