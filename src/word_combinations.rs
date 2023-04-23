@@ -161,10 +161,11 @@ impl Word
 						}
 						else
 						{
-							for place in j .. 11
+							for place in j .. length_words - 1
 							{
 								self.word_count.line[place] += 1;
 							}
+							self.word_count.line[length_words - 1] = self.word_count.line[length_words - 2] + 1;
 
 							word_vector.push(words[self.word_count.line[j]].to_string());
 
@@ -178,13 +179,11 @@ impl Word
 							pivot += 1;
 						}
 					}
-
-					//break;
 				}
 
 				c += 1;
 
-				if c == 2
+				if c == length_words as i32 - 1
 				{
 					break;
 				}
