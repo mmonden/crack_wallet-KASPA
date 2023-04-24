@@ -140,7 +140,7 @@ impl Word
 			while !self.word_count.at_end[22] && !self.word_count.at_end[23] && !self.word_count.at_end[24] && !self.word_count.at_end[25]
 			{	
 				let word : usize = 2;
-				for cc in 0 .. length - self.word_count.line[12 - word]
+				for cc in 0 .. length - self.word_count.line[12 - word] - 1
 				{
 					pivot -= 1;
 					
