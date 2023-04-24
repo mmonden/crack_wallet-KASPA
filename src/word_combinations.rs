@@ -136,9 +136,11 @@ impl Word
 
 			pivot = length_words - index;
 
+
 			while !self.word_count.at_end[22] && !self.word_count.at_end[23] && !self.word_count.at_end[24] && !self.word_count.at_end[25]
 			{	
-				for cc in 0 .. length
+				let word : usize = 2;
+				for cc in 0 .. length - self.word_count.line[12 - word]
 				{
 					pivot -= 1;
 					
