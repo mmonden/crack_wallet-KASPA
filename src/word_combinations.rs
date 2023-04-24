@@ -136,57 +136,57 @@ impl Word
 
 			pivot = length_words - index;
 
-			let mut c : i32 = 0;
-
 			while !self.word_count.at_end[22] && !self.word_count.at_end[23] && !self.word_count.at_end[24] && !self.word_count.at_end[25]
 			{	
-				pivot -= 1;
-
-				for mut j in pivot .. length_words
+				for cc in 0 .. length
 				{
-					while self.word_count.line[j] < length - 1
+					pivot -= 1;
+					
+					for mut j in pivot .. length_words
 					{
-						for i in 0 .. pivot
+						while self.word_count.line[j] < length - 1
 						{
-							word_vector.push(words[self.word_count.line[i]].to_string());
-						}
-
-						//self.incrementLine(j);//self.word_count.line[j] += 1;	// Should be checked if okay to do so;
-
-						if j == 11
-						{
-							self.word_count.line[j] += 1;
-
-							word_vector.push(words[self.word_count.line[j]].to_string());
-						}
-						else
-						{
-							for place in j .. length_words - 1
+							for i in 0 .. pivot
 							{
-								self.word_count.line[place] += 1;
-							}
-							self.word_count.line[length_words - 1] = self.word_count.line[length_words - 2] + 1;
-
-							word_vector.push(words[self.word_count.line[j]].to_string());
-
-							//add next word(s)
-							for next in j + 1 .. length_words
-							{
-								word_vector.push(words[self.word_count.line[next]].to_string());
+								word_vector.push(words[self.word_count.line[i]].to_string());
 							}
 
-							j += 1;
-							pivot += 1;
+							//self.incrementLine(j);//self.word_count.line[j] += 1;	// Should be checked if okay to do so;
+
+							if j == 11
+							{
+								self.word_count.line[j] += 1;
+
+								word_vector.push(words[self.word_count.line[j]].to_string());
+							}
+							else
+							{
+								for place in j .. length_words - 1
+								{
+									self.word_count.line[place] += 1;
+								}
+								self.word_count.line[length_words - 1] = self.word_count.line[length_words - 2] + 1;
+
+								word_vector.push(words[self.word_count.line[j]].to_string());
+
+								//add next word(s)
+								for next in j + 1 .. length_words
+								{
+									word_vector.push(words[self.word_count.line[next]].to_string());
+								}
+
+								j += 1;
+								pivot += 1;
+							}
 						}
 					}
-				}
 
-				c += 1;
-
-				if c == length_words as i32 - 1
-				{
-					break;
+					if cc == length_words + 500
+					{
+						break;
+					}
 				}
+				break;
 			}
 
 			break;

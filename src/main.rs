@@ -6,7 +6,7 @@ fn main()
 {
 	let password = "M@tth1asMonden";
 
-	let filepath = "/home/matthiasmonden/projects/rusty-kaspa/wallet/bip32/src/mnemonic/words/english.txt";
+	let filepath = "../../wallet/bip32/src/mnemonic/words/english.txt";
 
 	// let c : char = 'a';
 	// println!("{}", c as u32 - 97);
