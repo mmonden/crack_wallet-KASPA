@@ -182,12 +182,8 @@ impl Word
 							}
 						}
 					}
-
-					if cc == length_words + 500
-					{
-						break;
-					}
 				}
+				
 				break;
 			}
 
